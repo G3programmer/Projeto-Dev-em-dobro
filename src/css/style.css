@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(12, 12, 12);
+    color: #fff;
+}
+
+.cabecalho {
+    height: 80px;
+    background-color: rgb(20, 19, 19);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    border-bottom: 1px solid rgb(22, 21, 21);
+}
+
+.cabecalho .Logo {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho .menu {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho .menu li a {
+    padding: 30px;
+    color: #e8e8e8;
+    font-weight: bolder;
+    font-size: 15px;
+    font-family: 'thegoodmonolith';
+}
+
+.cabecalho .menu li a:hover {
+border-bottom: 2px solid white;
+
+}
