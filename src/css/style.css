@@ -40,6 +40,43 @@ body {
     display: flex;
     position: relative;
     min-height: calc(100vh - 80px);
+    overflow: hidden;
+}
+
+
+@keyframes slideAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    transition: background-color 4s ease;
+    z-index: 1;
+}
+
+.home:hover::before {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Torna a sobreposição escura ao passar o mouse */
 }
 
 .home::after {
@@ -53,7 +90,44 @@ body {
 .home .imagem-fundo {
     width: 100%;
     object-fit: cover;
+    transition: filter 1s ease-in-out;
 }
+
+.transicao {
+    transition: opacity 1s ease-in-out;
+}
+
+.home:hover .imagem-fundo {
+    filter: brightness(70%);
+}
+
+/* Adiciona uma regra para escurecer a sobreposição */
+.home:hover::before {
+    background-color: rgba(0, 0, 0, 0);
+    /* Torna a sobreposição transparente ao passar o mouse */
+}
+
+.sobreposicao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    /* Inicia com opacidade 0 (transparente) */
+    transition: opacity 1s ease;
+    /* Adiciona uma transição de 1 segundo para a opacidade */
+    z-index: 2;
+    /* Garante que a sobreposição esteja acima da imagem de fundo */
+}
+
+.sobreposicao.escurecer {
+    opacity: 0.7;
+    /* Opacidade desejada durante a transição */
+}
+
+
 
 .home .informacoes {
     position: absolute;
